@@ -1,0 +1,31 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="./controll.js"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <script src="https://apis.skplanetx.com/tmap/js?version=1&format=javascript&appKey=0865d549-33f6-35a2-8cfc-cf0e151e450f"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+     <title>simpleMap</title>
+</head>
+
+<body onload="init()">
+ 
+    <div id="map_div"> </div>
+    <div id='mylocationinfo'></div>
+    <form action="send_fcm.php" method="post">
+        <textarea name="message" rows="4" cols="50" placeholder="give message"  required></textarea><br>
+        <input type="hidden" name="lat" id="lat" value="0">
+        <input type="hidden" name="log" id="log" value="0">
+        <input type="submit" name="submit" value="Send" id="submitButton">
+    </form>
+
+    <script>
+        var elt = document.getElementById('mylocationinfo');
+        var $lat = $("#lat");
+        var $log = $("#log");
+        whereami(elt,$lat,$log);
+    </script>
+
+ </body>
+</html>
